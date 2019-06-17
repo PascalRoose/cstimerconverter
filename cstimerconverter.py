@@ -7,7 +7,6 @@ import math
 from dateutil.relativedelta import *
 
 prefix = '3x3x3'
-# midfix = '\\\",\\\"\\\",15'
 postfix = 'no;no;no;1538321593773'
 
 
