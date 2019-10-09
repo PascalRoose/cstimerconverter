@@ -1,22 +1,31 @@
-# Cube Timer Converter
-## Installation
-Make sure you have Python 3.6 or higher installed. 
-
-To install Python I recommend you to following the tutorial on https://docs.python-guide.org/starting/installation/
+# Cube Times Converter
+This is a simple Telegram bot for converting [CsTimer](https://cstimer.net/) files to [Cube Timer](https://play.google.com/store/apps/details?id=br.com.mateusfiereck.cubetimer&hl=en) (Android App by Mateus Fiereck) files.
 
 ## Usage
-If you have Python 3.6 installed as default you can execute the program using the `python` command. 
-Otherwise you'll have to use the `python3` command. For the examples I'll be using the `python3` command.
+Open [@cubetimerbot](http://t.me/cubetimerbot) and start the bot. If you send your .
 
-Python expects 3 arguments for the script to run:
-- Script name, in our case: cstimerconverter.py
-- Input file
-- Output file
+## Build your own bot
+### Requirements
+You will need Python 3.6 or higher and setup tools. That's it!
 
-The location of the input and output file arguments are always relative from the script location.
+### Setup
+First set up a bot using [@botfather](http://t.me/botfather). Here you can also get the bot token you're gonna need.
 
-For example: if you have your input file named input.txt in the same directory as the script and 
-you wanna convert and save it as output.txt (in the same directory). You'll then execute the following:
+Fill in the variables in 'example.env' and save the file as '.env'.
+
+## Installation
+Open a terminal in the root of the project directory. 
+Install the required Python Packages listed in 'requirements.txt' using the following command:
+
 ```
-python3 input.txt output.txt
+pip install -r requirements.txt
 ```
+
+## Running
+Now all you need to do is start the bot by typing the following command:
+
+```
+python cubetimesbot.py
+```
+
+That's it! You can now use this bot as described in the section 'Usage'.
