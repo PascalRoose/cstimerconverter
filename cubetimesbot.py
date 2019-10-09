@@ -33,7 +33,7 @@ def calc_time(ms):
     # Calculate the amount of minutes (60 sec x 1000 ms)
     minutes = math.floor(ms / (60 * 1000))
     # Calculate the amount of seconds
-    seconds = (ms % (60 * 1000)) / 1000
+    seconds = math.floor((ms % (60 * 1000)) / 1000)
     # Get the modulo (left over)
     milliseconds = ms % 1000
 
