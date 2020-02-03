@@ -58,11 +58,10 @@ def convert_times(inputdata):
     output_data = ''
     # Loop through all session check if the key is in the json object
     # Start with 1 so that the key is 'session1'. Add one every loop, so next loop key is 'session2'.
-    session_id = 1
-    while 'session' + str(session_id) in inputdata:
-        session_name = 'session' + str(session_id)
+    sessions = [key for key in inputdata.keys() if "session" in key]
+    for session in sessions:
         # Each session is an array of solves. Loop through the solves
-        solves = inputdata[session_name]
+        solves = inputdata[session]
         for solve in solves:
             time_solved = calc_time(solve[0][1])
             scramble = solve[1]
@@ -83,8 +82,6 @@ def convert_times(inputdata):
                 f'{os.getenv("PREFIX")};{time_solved};{scramble};{timestamp};{os.getenv("POSTFIX")};\n'
             # Write the new record to the output data
             output_data += new_data_record
-        # Next session (+1)
-        session_id += 1
     return output_data
 
 
@@ -124,7 +121,7 @@ def create_outputfile(outputdata, filename):
 
 def process_times(update, _context):
     filename = update.message.document.file_name
-
+    logger.info(filename)
     inputfile = update.message.document.get_file()
     inputdata = get_inputdata(inputfile, filename)
 
