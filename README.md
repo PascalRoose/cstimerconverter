@@ -29,3 +29,6 @@ python cubetimesbot.py
 ```
 
 That's it! You can now use this bot as described in the section 'Usage'.
+
+
+This is a new change. Something, something...
